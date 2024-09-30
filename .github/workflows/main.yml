@@ -1,0 +1,53 @@
+name: Building attendance-zap-mobile
+on: 
+  push:
+      branches:
+        -main
+  pull_request:
+    branches:
+      -main
+      
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [20.13.1]
+        
+    steps:
+      # Checkout the repository (pulling the latest code from the repository)
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      # Set up Node.js environment
+      - name: Set up Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with: 
+          node-version: ${{ matrix.node-version }} 
+          cache: 'yarn'
+
+      # Install dependancies
+      - name: Install dependancies
+        run: yarn install
+
+      # Running Typescript check if using Typescript
+      - name: Check Typescript
+        run: yarn tsc
+        if: fileExists('tsconfig.json')
+
+      # Building the project
+      - name: Build the app
+        run: yarn build
+
+      # Test the project (optional)
+      - name: Run tests
+        run: yarn test
+
+      # Clean up and exit
+      - name: Clean up build cache
+        run: rm -rf node_modules
+
+        
+        
+          
