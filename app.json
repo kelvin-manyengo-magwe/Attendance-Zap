@@ -1,0 +1,44 @@
+{
+  "expo": {
+    "name": "attendance-zap-mobile",
+    "slug": "attendance-zap-mobile",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "package": "com.magwe.attendancezap"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "2e795f27-162f-4c3a-8458-d8e7ab4e7299"
+      }
+    },
+    "plugins": [
+        [
+            "react-native-vision-camera",
+            {
+              "useCameraPermissionText": "$(PRODUCT_NAME) needs access to your Camera",
+
+              // optionaly for audio recording
+              "enableMicrophonePermission": true,
+              "microphonePermissionText": "$(PRODUCT_NAME) needs to access your microphone"
+            }
+        ]
+    ]
+  }
+}
