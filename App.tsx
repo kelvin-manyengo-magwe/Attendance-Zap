@@ -4,8 +4,9 @@ import StackNavigator from './src/navigation/StackNavigator';
 
 const App = () => {
   return (
-    <View style={styles.container}>
+    <View style={container.styles}>
       <StatusBar style="light" />
+        <Text>Me</Text>
       <StackNavigator />
     </View>
   )
@@ -15,6 +16,8 @@ export default App;
 
 
 const container = StyleSheet.create({
-  backgroundColor: '#fff',
-  display: 'flex'
+    styles: {
+      backgroundColor: '#fff',
+      display: 'flex'
+    }
 });
