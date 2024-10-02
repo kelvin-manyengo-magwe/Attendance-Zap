@@ -4,11 +4,10 @@ import StackNavigator from './src/navigation/StackNavigator';
 
 const App = () => {
   return (
-    <View style={container.styles}>
+    <>
       <StatusBar style="light" />
-        <Text>Me</Text>
       <StackNavigator />
-    </View>
+    </>
   )
 };
 

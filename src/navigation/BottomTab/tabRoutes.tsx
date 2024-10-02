@@ -16,14 +16,20 @@ export type TabParamList = {
 export const tabRoutes = [
     {
       name: 'HomePage',
-      component: HomePage
+      component: HomePage,
+      label: 'Home',
+      icon: 'home'
     },
     {
       name: 'Scanner',
-      component: Scanner
+      component: Scanner,
+      label: 'Scanner',
+      icon: 'scanner'
     },
     {
       name: 'Settings',
-      component: Settings
+      component: Settings,
+      label: 'Settings',
+      icon: 'settings'
     }
 ];
